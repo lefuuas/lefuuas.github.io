@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ueeeee paaa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <p><strong> Kauanne quer sair comigo??</strong> </p>
+
+        <div> 
+            <a href="https://www.youtube.com/watch?v=orWnzqBA63w"><button>Sim</button></a>
+            <Button class="Nao" onclick="Clicknao()">Não</Button>
+        </div>
+
+
+    <script>
+         function Clicknao() {
+            const button = document.querySelector('.Nao');
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const buttonWidth = button.offsetWidth;
+            const buttonHeight = button.offsetHeight;
+            const maxLeft = windowWidth - buttonWidth;
+            const maxTop = windowHeight - buttonHeight;
+
+            let newLeft = Math.floor(Math.random() * maxLeft);
+            let newTop = Math.floor(Math.random() * maxTop);
+
+            button.style.left = `${newLeft}px`;
+            button.style.top = `${newTop}px`;
+        }
+        
+
+    </script>
+</body>
+</html>
