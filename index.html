@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ueeeee paaa</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .Nao {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,24 +23,28 @@
         </div>
 
 
-    <script>
-         function Clicknao() {
-            const button = document.querySelector('.Nao');
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-            const buttonWidth = button.offsetWidth;
-            const buttonHeight = button.offsetHeight;
-            const maxLeft = windowWidth - buttonWidth;
-            const maxTop = windowHeight - buttonHeight;
+    
+<script>
+    function Clicknao() {
+        const button = document.querySelector('.Nao');
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const buttonWidth = button.offsetWidth;
+        const buttonHeight = button.offsetHeight;
+        const maxLeft = windowWidth - buttonWidth;
+        const maxTop = windowHeight - buttonHeight;
 
-            let newLeft = Math.floor(Math.random() * maxLeft);
-            let newTop = Math.floor(Math.random() * maxTop);
+        let newLeft = Math.floor(Math.random() * maxLeft);
+        let newTop = Math.floor(Math.random() * maxTop);
 
-            button.style.left = `${newLeft}px`;
-            button.style.top = `${newTop}px`;
-        }
-        
+        // Restrições adicionais para manter o botão visível
+        newLeft = Math.max(0, newLeft);
+        newTop = Math.max(0, newTop);
+        newLeft = Math.min(maxLeft, newLeft);
+        newTop = Math.min(maxTop, newTop);
 
-    </script>
+        button.style.transform = `translate(${newLeft /2}px, ${newTop /2}px)`;
+    }
+</script>
 </body>
 </html>
